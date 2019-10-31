@@ -8,6 +8,7 @@ module Kernel
   def get url, &block
     uri = URI.parse url
     get = Net::HTTP::Get.new(uri)
+    get.use_ssl = (uri.scheme == 'https')
     req = Net::HTTPHeader.build_headers get
     resp = Net::HTTP.start(uri.host, uri.port) { |http| http.request(req) }
     json = net_parse resp
@@ -20,7 +21,7 @@ module Kernel
     ApiPi::HEADER.merge!( { key => value } )
   end
 
-a private
+  private
 
     # Groups all of the response parsing
 
