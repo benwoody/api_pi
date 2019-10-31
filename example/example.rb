@@ -2,14 +2,13 @@ require 'api_pi'
 
 set_header "api-pi-demo-header", "api-pi-example"
 
-get "https://raw.githubusercontent.com/benwoody/api_pi/master/example/apiary.json" do
+get "https://raw.githubusercontent.com/benwoody/api_pi/master/example/example.json" do
 
   test "headers" do
-    response.header.contenttype.is "application/json"
     response.code.is 200
   end
 
-  test "body results.string" do
+  test "results.string" do
     response.body.results.string.is_a String
     response.body.results.string.matches /\w*/
   end
@@ -25,6 +24,6 @@ get "https://raw.githubusercontent.com/benwoody/api_pi/master/example/apiary.jso
   end
 
   test "results.array" do
-    response.body.results.array.includes 4
+    response.body.results.array.includes 3
   end
 end

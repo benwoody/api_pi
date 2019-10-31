@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    api_pi (0.2.5)
+    api_pi (0.2.6)
       map (~> 6.6)
 
 GEM
