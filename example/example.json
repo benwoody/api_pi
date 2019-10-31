@@ -1,0 +1,12 @@
+{
+  "metadata": {
+    "totalCount": 120,
+    "totalPageCount": 13
+  },
+  "results": {
+    "string": "I'm a String!",
+    "int": 12,
+    "here": "I'm present!",
+    "array": [0, 1, 2, 3]
+  }
+}

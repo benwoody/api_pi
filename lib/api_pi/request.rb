@@ -20,8 +20,8 @@ module Kernel
     ApiPi::HEADER.merge!( { key => value } )
   end
 
-  private
-   
+a private
+
     # Groups all of the response parsing
 
     def net_parse response

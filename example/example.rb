@@ -2,7 +2,7 @@ require 'api_pi'
 
 set_header "api-pi-demo-header", "api-pi-example"
 
-get "http://apipi.apiary.io/tests" do
+get "https://raw.githubusercontent.com/benwoody/api_pi/master/example/apiary.json" do
 
   test "headers" do
     response.header.contenttype.is "application/json"
