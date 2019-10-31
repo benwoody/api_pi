@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    api_pi (0.2.6)
-      map (~> 6.6)
+    api_pi (0.9)
+    map (~> 6.6)
 
 GEM
   remote: https://rubygems.org/
