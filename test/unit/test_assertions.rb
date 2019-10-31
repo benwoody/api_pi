@@ -2,10 +2,10 @@ require 'test_helper'
 
 module ApiPi
   class TestAssertions < TestCase
-    
+
     def test_patch_methods
       assert Object.respond_to?(:check_if), Object.check_if(true, "Yep")
-      assert Object.respond_to?(:is), Object.is(Object) 
+      assert Object.respond_to?(:is), Object.is(Object)
       assert Object.respond_to?(:is_a), @map.k.is_a(String)
       assert Object.respond_to?(:is_an), Object.is_an(Object)
       assert Object.respond_to?(:has_key), @map.has_key(:k)
@@ -38,7 +38,7 @@ module ApiPi
     end
 
     def test_is_a__with_true
-      assert "string".is_a(String) 
+      assert "string".is_a(String)
     end
 
     def test_is_a__with_false
@@ -58,7 +58,7 @@ module ApiPi
     end
 
     def test_has_keys__with_false
-      assert_raises(ApiPi::AssertionError) { @map.has_keys(:n,:r) } 
+      assert_raises(ApiPi::AssertionError) { @map.has_keys(:n,:r) }
     end
 
     def test_lacks_key__with_true

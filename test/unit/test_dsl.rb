@@ -5,7 +5,7 @@ module ApiPi
 
     def test_response_gathering
       r = ApiPi::Dsl.new(t:'t')
-      r.test "metadata" do 
+      r.test "metadata" do
         "test".is_a(String)
       end
       assert r.tests.has_key?('metadata'), r.tests['metadata']
