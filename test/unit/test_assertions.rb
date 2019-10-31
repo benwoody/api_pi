@@ -95,7 +95,7 @@ module ApiPi
 
     def test_stripped?
       assert "stripped".stripped?
-      assert_raises(ApiPi::AssertionError) { " not_stripped ". stripped? }
+      assert_raises(ApiPi::AssertionError) { " not_stripped ".stripped? }
     end
   end
 end

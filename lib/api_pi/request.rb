@@ -10,7 +10,6 @@ module Kernel
     get = Net::HTTP::Get.new(uri)
     req = Net::HTTPHeader.build_headers get
     http = Net::HTTP.new(uri.host, uri.port)
-    puts uri.scheme
     http.use_ssl = (uri.scheme == 'https')
     resp = http.request req
     json = net_parse resp
