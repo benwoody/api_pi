@@ -1,6 +1,4 @@
-# API P.I.
-
-[![Build Status](https://travis-ci.org/benwoody/api_pi.svg)](https://travis-ci.org/benwoody/api_pi)
+# ![API P.I.](https://raw.githubusercontent.com/benwoody/api_pi/main/logo/pi-logo.jpg) API P.I.
 
 A ruby DSL to test JSON contracts.
 
