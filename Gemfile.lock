@@ -16,7 +16,7 @@ GEM
     hashdiff (1.1.0)
     map (6.6.0)
     minitest (5.8.5)
-    public_suffix (5.1.1)
+    public_suffix (6.0.0)
     rake (13.0.6)
     rexml (3.3.1)
       strscan
@@ -28,6 +28,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-darwin-21
 
 DEPENDENCIES
   api_pi!
@@ -36,4 +37,4 @@ DEPENDENCIES
   webmock (~> 3.7.6)
 
 BUNDLED WITH
-   1.17.2
+   2.5.15
