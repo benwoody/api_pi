@@ -22,5 +22,4 @@ Gem::Specification.new do |g|
   g.add_development_dependency 'minitest', '~>5.24.1'
   g.add_development_dependency 'webmock', '~> 3.23.1'
   g.add_development_dependency 'rake', '~> 13.2.1'
-  g.add_development_dependency 'simplecov', '~> 0.22.0'
 end
