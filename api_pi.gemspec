@@ -16,6 +16,7 @@ Gem::Specification.new do |g|
   g.test_files = `git ls-files -- test/*`.split("\n")
 
   g.extra_rdoc_files      = ["README.md"]
+  g.required_ruby_version = '>= 3.0'
 
   g.add_dependency             'map', '~> 6.6'
   g.add_development_dependency 'minitest', '~>5.24.1'
