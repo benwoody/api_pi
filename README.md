@@ -1,7 +1,9 @@
-![API P.I.](https://raw.githubusercontent.com/benwoody/api_pi/main/logo/pi-logo.jpg)
 # API P.I.
+![API P.I.](https://raw.githubusercontent.com/benwoody/api_pi/main/logo/pi-logo.jpg)
 
 A ruby DSL to investigate and test JSON contracts.
+----------
+[![Tests](https://github.com/benwoody/api_pi/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/benwoody/api_pi/actions/workflows/tests.yml)
 
 ## Install
 
