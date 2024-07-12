@@ -5,6 +5,7 @@ A ruby DSL to investigate and test JSON contracts.
 ----------
 [![Gem Version](https://badge.fury.io/rb/api_pi.svg)](https://badge.fury.io/rb/api_pi)
 [![Tests](https://github.com/benwoody/api_pi/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/benwoody/api_pi/actions/workflows/tests.yml)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9d6b44df52cc20e1c049/maintainability)](https://codeclimate.com/github/benwoody/api_pi/maintainability)
 
 ## Install
 
