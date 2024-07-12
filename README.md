@@ -212,4 +212,3 @@ To-Do
 -----
 
 * Ability to basic_auth before GET request
-
