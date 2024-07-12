@@ -1,8 +1,7 @@
-# ![API P.I.](https://raw.githubusercontent.com/benwoody/api_pi/main/logo/pi-logo.jpg) API P.I.
+![API P.I.](https://raw.githubusercontent.com/benwoody/api_pi/main/logo/pi-logo.jpg)
+# API P.I.
 
-A ruby DSL to test JSON contracts.
-
-An example test can be found in the example/ directory.
+A ruby DSL to investigate and test JSON contracts.
 
 ## Install
 
