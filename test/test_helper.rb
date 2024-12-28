@@ -6,7 +6,7 @@ module ApiPi
   class TestCase < Minitest::Test
 
     def setup
-      map = { k: "value", array: [1,2,3], map: 1 }
+      map = { name: "api_pi", numbers: [1,2,3], map: 1 }
       @map = Map.new(map)
     end
 
