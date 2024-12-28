@@ -74,7 +74,7 @@ module ApiPi
     end
 
     def test_matches__with_false
-      assert_raises(ApiPi::AssertionError) { @map.name.matches(/\d/) }
+      assert_raises(ApiPi::AssertionError) { @map.name.matches(/\nope/) }
     end
 
     def test_includes__with_true

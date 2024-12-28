@@ -8,7 +8,7 @@ class Object
 
   # `check_if` is used to build assertions.  Create your own with it!
 
-  def check_if test, msg=nil
+  def check_if(test, msg=nil)
     msg ||= "I don't know about that"
     unless test then
       raise ApiPi::AssertionError, msg
@@ -22,7 +22,7 @@ class Object
   #     200.is "200"      => true
   #     "this".is "that"  => false
 
-  def is this
+  def is(this)
     msg = "#{self} is not #{this}"
     if this.is_a? Integer
       check_if self == this.to_s, msg
@@ -37,7 +37,7 @@ class Object
   #     3.14159265359.is_a Float      => true
   #     "Not an array!".is_an Array   => false
 
-  def is_a klass
+  def is_a(klass)
     msg = "#{self} is not a #{klass}"
     check_if self.is_a?(klass), msg
   end
@@ -49,7 +49,7 @@ class Object
   #     { "here": "present!" }.has_key "here"   => true
   #     { "here": "present!" }.has_key "nope!"  => false
 
-  def has_key kkey
+  def has_key(kkey)
     msg = "#{kkey} was not found in #{self.keys.join(', ')}}"
     check_if self.respond_to?(kkey), msg
   end
@@ -60,11 +60,11 @@ class Object
   #     { "here": "present!", "hello": "world!" }.has_keys "here","hello" => true
   #     { "here": "present!", "hello": "world!" }.has_keys "here","hope" => false
 
-  def has_keys *kkeys
+  def has_keys(*kkeys)
     not_found = []
-    kkeys.each do |k|
-      unless self.respond_to?(k)
-        not_found << k
+    kkeys.each do |kkey|
+      unless self.respond_to?(kkey)
+        not_found << kkey
       end
     end
     if not_found.empty?
@@ -82,7 +82,7 @@ class Object
   #     { "here": "present!" }.lacks_key "nope!"  => true
   #     { "here": "present!" }.lacks_key "here"   => false
 
-  def lacks_key kkey
+  def lacks_key(kkey)
     msg = "#{kkey} was found in #{self.keys.join(', ')}}"
     check_if !self.respond_to?(kkey), msg
   end
@@ -91,7 +91,7 @@ class Object
   #
   #     "hello".matches /ll/    => true
 
-  def matches regex
+  def matches(regex)
     msg = "#{self} did not match regex #{regex}"
     check_if self.match(regex), msg
   end
@@ -100,7 +100,7 @@ class Object
   #
   #     [1,2,3,4].includes 2    => true
 
-  def includes item
+  def includes(item)
     msg = "#{self} did not include #{item}"
     check_if self.include?(item), msg
   end

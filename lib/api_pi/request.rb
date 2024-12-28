@@ -5,20 +5,20 @@ module Kernel
 
   # Patch to add the `get` method. Create tests and assertions within.
 
-  def get url, &block
+  def get(url, &block)
     uri = URI.parse url
     get = Net::HTTP::Get.new(uri)
     req = Net::HTTPHeader.build_headers get
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = (uri.scheme == 'https')
-    resp = http.request req
-    json = net_parse resp
+    response = http.request(req)
+    json = net_parse(response)
     ApiPi::Dsl.new(json).parse(url, block)
   end
 
   # Used to set headers for GET requests.
 
-  def set_header key, value
+  def set_header(key, value)
     ApiPi::HEADER.merge!( { key => value } )
   end
 
@@ -26,7 +26,7 @@ module Kernel
 
     # Groups all of the response parsing
 
-    def net_parse response
+    def net_parse(response)
       body   = { body: JSON.load(response.body) }
       header = { header: response.to_dhash }
       code   = { code: response.code }
@@ -37,9 +37,9 @@ end
 module Net::HTTPHeader
 
   # Adds request headers from ApiPi::HEADER
-  def self.build_headers http_request
-    ApiPi::HEADER.each do |k,v|
-      http_request.add_field k, v
+  def self.build_headers(http_request)
+    ApiPi::HEADER.each do |key,value|
+      http_request.add_field(key, value)
     end
     http_request
   end
@@ -48,8 +48,8 @@ module Net::HTTPHeader
 
   def to_dhash
     head = {}
-    self.each_header do |k,v|
-      new_hash = Hash[k.gsub('-',''), v]
+    self.each_header do |key,value|
+      new_hash = Hash[key.gsub('-',''), value]
       head.merge!(new_hash)
     end
     head

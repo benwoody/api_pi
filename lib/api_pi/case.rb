@@ -25,23 +25,23 @@ module ApiPi
 
       # Runs tests and returns the results from the assertions.
 
-      def check test, block
-        res = []
+      def check(test, block)
+        results = []
         begin
           block.call
-        rescue ApiPi::AssertionError => e
-          res << e.message
+        rescue ApiPi::AssertionError => error
+          results << error.message
         end
-        failed = !res.empty?
+        failed = !results.empty?
         failed ? @failure_count += 1 : @success_count += 1
-        puts "\tERROR: #{res.first}\n" if failed
+        puts "\tERROR: #{results.first}\n" if failed
       end
 
       # Text output from results of #check.
 
       def summary
-        s = tests.keys.size
-        puts "\n#{s} tests, #{@success_count} succeeded, #{@failure_count} failed"
+        test_size = tests.keys.size
+        puts "\n#{test_size} tests, #{@success_count} succeeded, #{@failure_count} failed"
       end
 
       # Exit api_pi with a status of 1 if there are any failed tests.

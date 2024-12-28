@@ -5,12 +5,12 @@ module ApiPi
 
     attr_reader :response, :tests
 
-    def initialize response
+    def initialize(response)
       @tests = {}
       @response = Map.new(response)
     end
 
-    def parse url, block
+    def parse(url, block)
       self.instance_eval(&block)
       pi = ApiPi::Case.new(url, tests)
       pi.investigate
@@ -30,7 +30,7 @@ module ApiPi
     # onceyou run your tests, your test blocks are grouped together and
     # pass/fail based on assertions in the test block.
 
-    def test desc, &block
+    def test(desc, &block)
       @tests[desc] = block
     end
   end
