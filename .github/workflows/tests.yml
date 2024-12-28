@@ -18,14 +18,11 @@ permissions:
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
         ruby-version: ['3.0']
-
     steps:
-    - name: Set up Ruby
     - uses: actions/checkout@v4
     - uses: ruby/setup-ruby@v1
       with:
